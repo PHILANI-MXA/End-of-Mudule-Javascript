@@ -19,3 +19,22 @@ $(document).ready(function() {
         }
     });
 });
+
+
+const addItem = document.getElementById('#addPropertyModal');
+const addPropertyInput = document.getElementsByName('options[]');
+let addProperty = [];
+
+
+function addProperty(e) {
+    if (e !== '') {
+        const property = {
+            id: Date().now,
+            name: e,
+            completed: false
+        };
+        property.push(room);
+        addToLocalStorage(room)
+        propertyInput.value = '';
+    }
+}
