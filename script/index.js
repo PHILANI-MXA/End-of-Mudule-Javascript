@@ -19,6 +19,7 @@ li.forEach((el, index) => {
         circle.style.transform = "translateX(" + getWidth * index + "px)";
 
     })
+    addToLocalStorage(properties);
 });
 
 
@@ -32,6 +33,7 @@ function filterSelection(c) {
         w3RemoveClass(x[i], "show");
         if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
     }
+    addToLocalStorage(properties);
 }
 
 function w3AddClass(element, name) {
@@ -42,6 +44,7 @@ function w3AddClass(element, name) {
         if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
     }
     console.log("add class");
+    addToLocalStorage(properties);
 }
 
 function w3RemoveClass(element, name) {
@@ -54,6 +57,7 @@ function w3RemoveClass(element, name) {
         }
     }
     element.className = arr1.join(" ");
+    addToLocalStorage(properties);
 }
 
 
@@ -65,4 +69,5 @@ for (var i = 0; i < btns.length; i++) {
         current[0].className = current[0].className.replace(" .active", "");
         this.className += " .active";
     });
+    addToLocalStorage(properties);
 }
